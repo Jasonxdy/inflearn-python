@@ -47,32 +47,34 @@ print()
 # format 사용(d, s, f)
 print('%s %s' % ('one', 'two'))
 print('{} {}'.format('one', 'two'))
-print('{1} {0}'.format('one', 'two'))
+print('{1} {0}'.format('one', 'two')) # two one
 
 # %s
-print('%10s' % ('nice',))
-print('{:>10}'.format('nice'))
+print('%10s' % ('nice',)) #       nice
+print('{:>10}'.format('nice')) #       nice
 
-print('%-10s' % ('nice',))
-print('{:10}'.format('nice'))
+print('%-10s' % ('nice',)) # nice      
+print('{:10}'.format('nice')) # nice      
 
-print('{:_<10}'.format('nice'))
-print('{:^10}'.format('nice'))
+print('{:_<10}'.format('nice')) # nice______ : <는 왼쪽을, >는 오른쪽 정렬을 의미함
+print('{:^10}'.format('nice')) #    nice   : ^는 가운데 정렬을 의미함
 
-print('%.5s' % ('pythonstudy',))
-print('{:.5}'.format('pythonstudy'))
-print('{:10.5}'.format('pythonstudy'))
+print('%.5s' % ('pythonstudy',)) # pytho : .n은 n개까지 절삭
+print('{:.5}'.format('pythonstudy')) # pytho
+print('{:>10.5}'.format('pythonstudy')) #      pytho :10자리 확보하고 오른쪽 정렬하고 5자리 절삭
 
-# %d
+# # %d
 print('%d %d' % (1, 2))
 print('{} {}'.format(1, 2))
 
 print('%4d' % (42,))
 print('{:4d}'.format(42))
 
-# %f
+# # %f
 print('%f' % (3.141592653589793,))
 print('{:f}'.format(3.141592653589793))
 
 print('%06.2f' % (3.141592653589793,))
-print('{:06.2f}'.format(3.141592653589793))
+print('{:06.2f}'.format(3.141592653589793)) # 6자리 확보, 빈칸은 0으로 채움, 소수점 2자리까지
+print('{:0<6.2f}'.format(3.141592653589793)) # 6자리 확보, 빈칸은 0으로 채움, 소수점 2자리까지 + 왼쪽정렬
+# 즉 format 함수는 [index : 채울 문자열, 정렬 방향, 총 자릿수, .n (절삭), format type(s,d,f)] 순

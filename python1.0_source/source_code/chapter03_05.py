@@ -118,3 +118,10 @@ print('f - ', f)
 f.update(temp)
 
 print('f - ', f)
+
+print()
+
+while a:
+    print(a.popitem())
+    
+print(a)
