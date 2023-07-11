@@ -55,7 +55,7 @@ class WordSplitter:
         return 'WordSplit(%s)' % (self._text)
 
 
-wi = WordSplitIter('Do today what you could do tomorrow')
+wi = WordSplitter('Do today what you could do tomorrow')
 
 print(wi)
 print(next(wi))

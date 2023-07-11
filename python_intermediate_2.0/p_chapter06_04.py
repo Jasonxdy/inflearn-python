@@ -22,7 +22,7 @@ import os
 import time
 from concurrent import futures
 
-WORK_LIST = [100000, 1000000, 10000000, 10000000]
+WORK_LIST = [1000000, 10000000, 100000000, 1000000000]
 
 # 동시성 합계 계산 메인함수
 # 누적 합계 함수(제네레이터)
@@ -36,7 +36,7 @@ def main():
     start_tm = time.time()
     # 결과 건수
     # ProcessPoolExecutor
-    with futures.ThreadPoolExecutor() as excutor:
+    with futures.ThreadPoolExecutor(max_workers=worker) as excutor:
         # map -> 작업 순서 유지, 즉시 실행
         result = excutor.map(sum_generator, WORK_LIST)
     # 종료 시간
